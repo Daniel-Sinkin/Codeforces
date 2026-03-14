@@ -1,44 +1,15 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
+# Compiled objects & binaries
 *.o
-*.obj
-
-# Precompiled Headers
+*.out
+*.exe
 *.gch
 *.pch
+*.d
 
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
-
+# macOS
 .DS_Store
-build/
+
+# IDE / editor
+.cache/
+.clang-format
+compile_commands.json
