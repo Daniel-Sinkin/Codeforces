@@ -33,53 +33,6 @@ using f64 = double;
 #define dbg(x)
 #endif
 
-auto sieve(u64 t) -> std::vector<bool> {
-  std::vector<bool> primes(t + 1, true);
-  primes[0] = false;
-  primes[1] = false;
-  for(usize i{2}; i < t; ++i) {
-    if(!primes[i]) continue;
-    auto j = i * i;
-    while(j <= t) {
-      primes[j] = false;
-      j += i;
-    }
-  }
-  return primes;
-}
-
-auto _square(u64 x) -> __uint128_t {
-  return static_cast<__uint128_t>(x) * x;
-}
-
-auto usqrt(u64 x) -> u64 {
-  auto s = static_cast<u64>(std::sqrt(static_cast<f64>(x)));
-  if(_square(s) > x) --s;
-  if(_square(s + 1) <= x) ++s;
-  return s;
-}
-
 int main() {
-  std::ios::sync_with_stdio(false);
-  std::cin.tie(nullptr);
-
-  int n; std::cin >> n;
-  std::vector<u64> xs;
-  xs.reserve(n);
-  u64 max_{0};
-  while(n-- > 0) {
-    u64 t; std::cin >> t;
-    xs.push_back(t);
-    max_ = std::max(max_, t);
-  }
-  const auto primes = sieve(usqrt(max_));
-  for(const auto x : xs) {
-    const auto x_sqrt = usqrt(x);
-    const auto s2 = _square(x_sqrt);
-    if(s2 != x || !primes[x_sqrt]) {
-      std::cout << "NO\n";
-    } else {
-      std::cout << "YES\n";
-    }
-  }
+  return 0;
 }
